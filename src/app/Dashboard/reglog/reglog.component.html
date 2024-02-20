@@ -2,23 +2,23 @@
 <div class="regpage">
     <div class="input-box  sign-in">
       <div class="input-out">
-      <form action="">
+      <form [formGroup]="infinity">
         <span class="logo1">Game</span><span class="logo2">Quora</span>
         <h2>Login </h2>
-        <div class="input-group mb-3">
         
-        <input type="text" class="form-control"   >
-        <label class="lab">username</label>
+        <div class="input-group mb-3">
+        <input type="text" class="form-control"  name="useremail" formControlName="useremail"  >
+        <label class="lab">UserEmail<span class="error1" *ngIf="required('useremail')">*Enter the Email</span></label>
         </div>
         <div class="input-group mb-3">
          
-        <input type="password" class="form-control" >
-        <label class="lab">Password</label>
+        <input type="password" class="form-control"  name="pass" formControlName="pass">
+        <label class="lab">Password<span class="error1" *ngIf="required('pass')">*Enter password</span></label>
         </div>
         <div class="rem">
           <span><a href="">Forgot Password?</a></span>
         </div>
-        <button type="button" class="btn btn-outline-warning">SignIn</button>
+        <button type="button" class="btn btn-outline-warning" (click)="logininto()">SignIn</button>
   
         <div class="signup">
           <span>Don't have an account ?<a  (click)="signUp()" class="signInbtnlink"> Register</a></span>
@@ -37,13 +37,15 @@
   
     <div class="input-box sign-up">
       <div class="input-out">
-      <form action="">
+      <form action="" name="formfill" onsubmit="return  validation()">
         
         <span class="logo1">Game</span><span class="logo2">Quora</span>
         <h2 class="signlog">Sign In</h2>
-        <div class="input-group mb-3">
+        <h5 id="result">Head</h5>
         
-        <input type="text" class="form-control"   >
+        <div class="input-group mb-3">
+          
+        <input type="text" class="form-control" name="username"  >
         <label class="lab">Fullname</label>
         </div>
         <div class="input-group mb-3">
@@ -64,7 +66,7 @@
         <div class="rem">
           <span><input type="checkbox"> I agree to the terms & condtions</span>
         </div>
-        <button type="button" class="btn btn-outline-warning">Submit</button>
+        <button type="button"   class="btn btn-outline-warning">Submit</button>
   
         <div class="signup">
           <span>already have an account ?<a  (click)="LoginUp()" class="signUpbtnlink"> Login</a></span>

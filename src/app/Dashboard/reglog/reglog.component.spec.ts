@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormGroup, FormControl } from '@angular/forms';
 import { ReglogComponent } from './reglog.component';
 
 describe('ReglogComponent', () => {
@@ -8,7 +8,7 @@ describe('ReglogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReglogComponent]
+      imports: [ReglogComponent,FormGroup,FormControl]
     })
     .compileComponents();
     
