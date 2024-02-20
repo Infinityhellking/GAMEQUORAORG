@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
-import { LoginserviceService, logdata } from '../../loginservice.service';
+import { LoginserviceService } from '../../loginservice.service';
+import { FormcontrolValidationService } from '../../service/formcontrol-validation.service';
+
 
 @Component({
   selector: 'app-reglog',
@@ -13,25 +15,41 @@ import { LoginserviceService, logdata } from '../../loginservice.service';
 })
 export class ReglogComponent {
 
-  infinity:logdata|any;
+  loginpage:any;
+  validate:any;
+  regpage:any;
   router: any;
 
 
-  constructor(public cs:LoginserviceService, _router :Router) {
+  constructor(public cs:LoginserviceService, _router :Router,private _validate:FormcontrolValidationService) {
     this.router = _router;
-    this.infinity=new FormGroup({
+    this.validate = _validate;
+    this.loginpage=new FormGroup({
       useremail: new FormControl('',Validators.required),
       pass:new FormControl('',Validators.required),
     })
+
+    this.regpage=new FormGroup({
+      fullname:new FormControl('',Validators.required),
+      regemail:new FormControl('',Validators.required),
+      mobilenumber:new FormControl('',Validators.required),
+      password:new FormControl('',Validators.required),
+      confirmpassword:new FormControl('',Validators.required)
+
+
+    })
+
   }
 
-  required(controls:any){
-    let valid=this.infinity.get(controls)
-    if(valid.errors?.required && valid.touched){
-  return true;
-    }
-    return false;
-  }
+  // required(controls:any){
+    
+  //   let valid=this.loginpage.get(controls)
+
+  //   if(valid.errors?.required && valid.touched){
+  // return true;
+  //   }
+  //   return false;
+  // }
 
 
   
@@ -55,7 +73,7 @@ export class ReglogComponent {
 
   logininto(){
 
-    if(this.infinity.valid){
+    if(this.loginpage.valid){
       this.router.navigate(['/main']);
     }
     else{
@@ -67,8 +85,8 @@ export class ReglogComponent {
 
   checkValidityAndMarkAsTouched(): void {
     // Loop through all form controls and mark them as touched
-    Object.keys(this.infinity.controls).forEach((controlName) => {
-      const control = this.infinity.get(controlName);
+    Object.keys(this.loginpage.controls).forEach((controlName) => {
+      const control = this.loginpage.get(controlName);
       if (control) {
         control.markAsTouched();
       }

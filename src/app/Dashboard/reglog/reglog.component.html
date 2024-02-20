@@ -2,18 +2,18 @@
 <div class="regpage">
     <div class="input-box  sign-in">
       <div class="input-out">
-      <form [formGroup]="infinity">
+      <form [formGroup]="loginpage">
         <span class="logo1">Game</span><span class="logo2">Quora</span>
         <h2>Login </h2>
         
         <div class="input-group mb-3">
         <input type="text" class="form-control"  name="useremail" formControlName="useremail"  >
-        <label class="lab">UserEmail<span class="error1" *ngIf="required('useremail')">*Enter the Email</span></label>
+        <label class="lab">UserEmail<span class="error1" *ngIf="this.validate.validation(loginpage,'useremail')">*Enter the Email</span></label>
         </div>
         <div class="input-group mb-3">
          
         <input type="password" class="form-control"  name="pass" formControlName="pass">
-        <label class="lab">Password<span class="error1" *ngIf="required('pass')">*Enter password</span></label>
+        <label class="lab">Password<span class="error1" *ngIf="this.validate.validation(loginpage,'pass')">*Enter password</span></label>
         </div>
         <div class="rem">
           <span><a href="">Forgot Password?</a></span>
@@ -37,32 +37,36 @@
   
     <div class="input-box sign-up">
       <div class="input-out">
-      <form action="" name="formfill" onsubmit="return  validation()">
+      <form action="" [formGroup]="regpage">
         
         <span class="logo1">Game</span><span class="logo2">Quora</span>
         <h2 class="signlog">Sign In</h2>
-        <h5 id="result">Head</h5>
         
         <div class="input-group mb-3">
           
-        <input type="text" class="form-control" name="username"  >
-        <label class="lab">Fullname</label>
+        <input type="text" class="form-control" name="fullname" formControlName="fullname"  >
+        <label class="lab">Fullname<span class="error1" *ngIf="this.validate.validation(this.regpage,'fullname')">*Enter the Fullname</span></label>
         </div>
         <div class="input-group mb-3">
         
-          <input type="email" class="form-control"   >
-          <label class="lab">Email</label>
+          <input type="email" class="form-control"  name="regemail" formControlName="regemail" >
+          <label class="lab">Email<span class="error1" *ngIf="this.validate.validation(this.regpage,'regemail')">*Enter the Email</span></label>
           </div>
           <div class="input-group mb-3">
         
-            <input type="text" class="form-control"   >
-            <label class="lab">mobile no</label>
+            <input type="text" class="form-control" name="mobilenumber" formControlName="mobilenumber"  >
+            <label class="lab">mobile no<span class="error1" *ngIf="this.validate.validation(this.regpage,'mobilenumber')">*Enter the MonileNo</span></label>
             </div>
         <div class="input-group mb-3">
          
-        <input type="password" class="form-control" >
-        <label class="lab">Password</label>
+        <input type="password" class="form-control" name="password" formControlName="password">
+        <label class="lab">Password<span class="error1" *ngIf="this.validate.validation(this.regpage,'password')">*Enter the password</span></label>
         </div>
+        <div class="input-group mb-3">
+         
+          <input type="password" class="form-control" name="confirmpassword" formControlName="confirmpassword" >
+          <label class="lab">confirm Password<span class="error1" *ngIf="this.validate.validation(this.regpage,'confirmpassword')">*password</span></label>
+          </div>
         <div class="rem">
           <span><input type="checkbox"> I agree to the terms & condtions</span>
         </div>

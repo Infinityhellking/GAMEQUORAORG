@@ -7,8 +7,13 @@ export class FormcontrolValidationService {
 
   constructor() { }
 
-  public validation(){
-    
+  public validation(controls:any,controllerName:string){
+      let valid=controls.get(controllerName)
+  
+      if(valid.errors?.required && valid.touched){
+    return true;
+      }
+      return false;
   }
 
 

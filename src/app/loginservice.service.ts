@@ -1,17 +1,6 @@
 import { Injectable } from '@angular/core';
 
 
-export class logdata{
-
-  uname!:string;
-  pass!:string;
-
-}
-
-
-
-
-
 
 
 @Injectable({
