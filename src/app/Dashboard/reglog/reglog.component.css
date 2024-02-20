@@ -1,0 +1,223 @@
+.regpage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+
+.input-box{
+    position: relative;
+    width:400px ;
+    height: 550px;
+    background:rgba(22, 26, 114, 0.747);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(250, 250, 250, 0.744);
+    padding: 40px;
+    transition: 1s ease-in-out;
+}
+
+.regpage.active .input-box.sign-in{
+    transform: scale(0) translate(-300px, 500px);
+}
+
+.regpage .input-box.sign-up{
+    position: absolute;
+    transform: scale(0) translate(200px, -500px);
+}
+
+.regpage.active .input-box.sign-up{
+    transform: scale(1) translate(0,0) ;
+}
+
+.input-out{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.logo1,.logo2{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    left: 90px;
+    font-family: fantasy;
+}
+.logo1{
+    color: #ff0000;
+}
+.logo2{
+    color: rgb(0, 255, 229);
+}
+h2{
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 60px;
+    font-family: fantasy;
+}
+
+.input-group{
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid blue;
+}
+
+.input-group label{
+    position: absolute;
+    top:10%;
+    left: 5px;
+    transform: translateY(-80%);
+    font-size: 16px;
+    color: #fff700;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-group input{
+width: 320px;
+height: 40px;
+font-size: 16px;
+color: #fff;
+padding: 0 5px;
+background: transparent;
+border: none;
+box-shadow: none;
+outline: none;
+}
+
+
+.input-group input:focus~label{
+    transition-delay: .2s;
+    color: #ff0000;
+}
+.sign-up .logo1{
+position: relative;
+top: 30px;
+}
+
+.sign-up .logo2{
+    position: relative;
+    top: 30px;  
+}
+.rem{
+    margin: -5px 0 15px 5px;
+    color: #fff;
+}
+
+button{
+    position: relative;
+    width: 100%;
+    height: 40px;
+background: rgb(0, 255, 255);
+font-size: 18px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-weight: 700;
+color: #ff0000;
+cursor: pointer;
+border-radius: 30px;
+}
+
+.signlog{
+    position: relative;
+    top: 25px;
+}
+.signup{
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+    margin: 15px 0;
+}
+.signup span{
+    color: #fff;
+}
+
+.signup a{
+    color: rgb(0, 255, 221);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.signup a:hover{
+    text-decoration: underline;
+}
+
+.social-ic{
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+.social-icon a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 15px 6px 0;
+}
+.social-icon a:hover{
+    background: #fff;
+}
+
+.social-icon a:hover i{
+    color: rgba(red, green, blue, .3);
+}
+
+.social-icon a i{
+    color: #ff0000;
+    font-size: 20px;
+    transition: .3s;
+}
+
+
+@media only screen and (max-width: 400px) {
+
+
+    .input-box{
+        width: 250px;
+        height: 500px;
+        margin-bottom: 110px;
+    }
+
+    .input-group input{
+        width: 180px;
+        height: 20px;
+        font-size: 15px;
+        color: #fff;
+        padding: 0 5px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        }
+        .input-group label{
+            position: absolute;
+            top:10%;
+            left: 5px;
+            transform: translateY(-100%);
+        }
+
+        button{
+            position: relative;
+            left: 15px;
+            width: 80%;
+            height: 40px;
+        background: rgb(0, 255, 255);
+        font-size: 16px;
+        font-weight: 700;
+        color: #ff0000;
+        cursor: pointer;
+        border-radius: 30px;
+        }
+
+        .logo1,.logo2{
+            position: relative;
+            left: 5px;
+        }
+}
