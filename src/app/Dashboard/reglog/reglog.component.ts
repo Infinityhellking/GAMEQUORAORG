@@ -14,11 +14,14 @@ import { FormcontrolValidationService } from '../../service/formcontrol-validati
   styleUrl: './reglog.component.css'
 })
 export class ReglogComponent {
-
+signinto() {
+throw new Error('Method not implemented.');
+}
   loginpage:any;
   validate:any;
   regpage:any;
   router: any;
+ 
 
 
   constructor(public cs:LoginserviceService, _router :Router,private _validate:FormcontrolValidationService) {
@@ -64,11 +67,14 @@ export class ReglogComponent {
   
     LoginUp(){
       const regpage= document.getElementsByClassName('regpage')
+      
       const signUpbtnlink= document.getElementsByClassName('signUpbtnlink')
       const signInbtnlink= document.getElementsByClassName('signInbtnlink')
       
       regpage[0].classList.remove('active')
     }
+
+
 
 
   logininto(){
@@ -79,9 +85,20 @@ export class ReglogComponent {
     else{
       this.checkValidityAndMarkAsTouched();
     }
-
-   
   }
+
+  signuppage(){
+
+      if(this.regpage.valid){
+        this.router.navigate(['/main']);
+      }
+      else{
+        this.checkValidityAndMarkAsTouchedreg();
+      }
+      
+    }
+   
+  
 
   checkValidityAndMarkAsTouched(): void {
     // Loop through all form controls and mark them as touched
@@ -92,6 +109,14 @@ export class ReglogComponent {
       }
     });
   }
-    
+  checkValidityAndMarkAsTouchedreg(): void {
+    // Loop through all form controls and mark them as touched
+    Object.keys(this.regpage.controls).forEach((controlName) => {
+      const control = this.regpage.get(controlName);
+      if (control) {
+        control.markAsTouched();
+      }
+    });
+  }
 
 }

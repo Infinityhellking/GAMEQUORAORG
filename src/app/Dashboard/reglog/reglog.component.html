@@ -16,7 +16,7 @@
         <label class="lab">Password<span class="error1" *ngIf="this.validate.validation(loginpage,'pass')">*Enter password</span></label>
         </div>
         <div class="rem">
-          <span><a href="">Forgot Password?</a></span>
+          <span><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Forgot Password?</a></span>
         </div>
         <button type="button" class="btn btn-outline-warning" (click)="logininto()">SignIn</button>
   
@@ -68,9 +68,9 @@
           <label class="lab">confirm Password<span class="error1" *ngIf="this.validate.validation(this.regpage,'confirmpassword')">*password</span></label>
           </div>
         <div class="rem">
-          <span><input type="checkbox"> I agree to the terms & condtions</span>
+          <span><input type="checkbox" > I agree to the terms & condtions</span>
         </div>
-        <button type="button"   class="btn btn-outline-warning">Submit</button>
+        <button type="button"   class="btn btn-outline-warning" (click)="signuppage()">Submit</button>
   
         <div class="signup">
           <span>already have an account ?<a  (click)="LoginUp()" class="signUpbtnlink"> Login</a></span>
@@ -78,5 +78,141 @@
       </form>
     </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="formove">
+
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><span class="logo1">Game</span><span class="logo2">Quora</span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+          </div>
+          <div class="modal-body">
+            <form class="forgot-form">
+              <!-- <div class="mb-3">
+                
+                <input type="text" class="form-control" id="recipient-name">
+              </div> -->
+              <div class="forgroup">
+                <input type="text" class="form-control" placeholder="Email/PhoneNo"  aria-label="Recipient's username" aria-describedby="button-addon2">
+              
+              <button class="btn-forbtn btn-outline-secondary" type="button" id="button-addon2">GetOtp</button>
+          
+                <input type="text" class="form-control" placeholder="Enter OTP" aria-label="Recipient's username" aria-describedby="button-addon2">
+              
+              <button class="btn-forbtn btn-outline-secondary" type="button" id="button-addon2">Verify</button>
+              </div>
+<hr>
+
+<div class="forgroup">
+  <input type="text" class="form-control" placeholder="New Password"  aria-label="Recipient's username" aria-describedby="button-addon2">
+</div>
+<div class="forgroup">
+  <input type="text" class="form-control" placeholder="confirm password"  aria-label="Recipient's username" aria-describedby="button-addon2">
+</div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="input-box  forgot-pass">
+      <div class="input-out">
+      <form [formGroup]="loginpage">
+        <span class="logo1">Game</span><span class="logo2">Quora</span>
+        <h2>Forgotpassword </h2>
+        
+        <div class="input-group mb-3">
+        <input type="text" class="form-control"  name="useremail" formControlName="useremail"  >
+        <label class="lab">UserEmail<span class="error1" *ngIf="this.validate.validation(loginpage,'useremail')">*Enter the Email</span></label>
+        </div>
+        <div class="input-group mb-3">
+         
+        <input type="password" class="form-control"  name="pass" formControlName="pass">
+        <label class="lab">Password<span class="error1" *ngIf="this.validate.validation(loginpage,'pass')">*Enter password</span></label>
+        </div>
+        <div class="rem">
+          <span><a href="">Forgot Password?</a></span>
+        </div>
+        <button type="button" class="btn btn-outline-warning" (click)="logininto()">SignIn</button>
+  
+        <div class="signup">
+          
+          <span>Don't have an account ?<a  (click)="signUp()" class="signInbtnlink"> Register</a></span>
+        </div>
+        <div class="social-ic">
+          <span>Or sign in with</span>
+          <div class="social-icon">
+            <a href="#"><i class='bx bxl-google'></i></a>
+            <a href="#"><i class='bx bxl-discord-alt' ></i></a>
+            <a href="#">  <i class='bx bxl-facebook-square' ></i></a>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div> -->
+    
   </div>
   

@@ -22,6 +22,48 @@
     transform: scale(0) translate(-300px, 500px);
 }
 
+
+.modal{
+width: 400px;
+height: 550px;
+margin-left: 565px;
+}
+
+.forgroup input{
+    margin-top: 10px;
+}
+.forgroup .btn-forbtn{
+    margin-top: 10px;
+}
+
+
+.btn-close{
+    width: 40px;
+    height: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.btn-for{
+    width: 80px;
+    position: relative;
+    left: 289px;
+    bottom: 30px;
+    font-size: 14;
+    height: 30px;
+    border-radius: 0;
+}
+.modal-body .form-control{
+ color: black;
+}
+
+.btn-forbtn{
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+}
+
+
 .regpage .input-box.sign-up{
     position: absolute;
     transform: scale(0) translate(200px, -500px);
@@ -187,6 +229,8 @@ border-radius: 30px;
 @media only screen and (max-width: 400px) {
 
 
+
+
     .input-box{
         width: 280px;
         height: 580px;
@@ -241,4 +285,37 @@ border-radius: 30px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-weight: 600;
            }
+
+
+           .modal[_ngcontent-ng-c4048592500] {
+            width: 300px !important;
+            height: 550px;
+            margin-left: 15px !important;
+        }
+
+        .btn-forbtn{
+            width: 80px;
+            height: 30px;
+            font-size: 14px;
+        }
+
+        .btn-close{
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            text-align: center;
+            margin-right: 5px;
+        }
+
+        .modal-footer .btn{
+            margin-right: 50px;
+        }
+}
+
+@media only screen and (max-width: 600px){
+    .modal{
+        width: 400px !important;
+        height: 550px;
+        margin-left: 15px !important; 
+        }
 }
