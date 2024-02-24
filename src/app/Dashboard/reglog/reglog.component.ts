@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormGroupName, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
 import { LoginserviceService } from '../../loginservice.service';
 import { FormcontrolValidationService } from '../../service/formcontrol-validation.service';
@@ -14,6 +14,7 @@ import { FormcontrolValidationService } from '../../service/formcontrol-validati
   styleUrl: './reglog.component.css'
 })
 export class ReglogComponent {
+  validators: any;
 signinto() {
 throw new Error('Method not implemented.');
 }
@@ -21,6 +22,8 @@ throw new Error('Method not implemented.');
   validate:any;
   regpage:any;
   router: any;
+ forgotpage:any;
+ forgotval!:boolean;
  
 
 
@@ -42,8 +45,35 @@ throw new Error('Method not implemented.');
 
     })
 
+
+    this.forgotpage=new FormGroup({
+      mobile:new FormControl('',Validators.required),
+      otp:new FormControl('',Validators.required),
+      newpassword:new FormControl('',Validators.required),
+      confirmpassword:new FormControl('',Validators.required)
+    });
+
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   // required(controls:any){
     
   //   let valid=this.loginpage.get(controls)
@@ -77,6 +107,7 @@ throw new Error('Method not implemented.');
 
 
 
+
   logininto(){
 
     if(this.loginpage.valid){
@@ -98,7 +129,31 @@ throw new Error('Method not implemented.');
       
     }
    
-  
+
+    matchPassword(password: string, confirmPassword: string): boolean {
+      return password === confirmPassword;
+    }
+
+    forgotbtn(){
+ 
+      if (this.matchPassword(this.forgotpage.value.newpassword,this.forgotpage.value.confirmpassword)) {
+        console.log("Passwords match!");
+      } else {
+        console.log("Passwords do not match.");
+      }
+    }
+
+
+
+
+ 
+
+
+
+
+
+
+
 
   checkValidityAndMarkAsTouched(): void {
     // Loop through all form controls and mark them as touched
@@ -119,4 +174,35 @@ throw new Error('Method not implemented.');
     });
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }
+
+
+

@@ -25,7 +25,7 @@
 
 .modal{
 width: 400px;
-height: 550px;
+height: 580px;
 margin-left: 565px;
 }
 
@@ -36,6 +36,13 @@ margin-left: 565px;
     margin-top: 10px;
 }
 
+#button-addon2{
+    width: 100px;
+}
+
+.forval{
+    color: #ff0000;
+}
 
 .btn-close{
     width: 40px;
@@ -290,7 +297,7 @@ border-radius: 30px;
            .modal[_ngcontent-ng-c4048592500] {
             width: 300px !important;
             height: 550px;
-            margin-left: 15px !important;
+            margin-left: 35px !important;
         }
 
         .btn-forbtn{
