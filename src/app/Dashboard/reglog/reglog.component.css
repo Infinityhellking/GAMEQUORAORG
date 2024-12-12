@@ -3,6 +3,9 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-image: url("/assets/bg3.jpeg");
+    background-size: 100% 100% ;
+    background-repeat:no-repeat ;
 }
 
 
@@ -323,6 +326,6 @@ border-radius: 30px;
     .modal{
         width: 400px !important;
         height: 550px;
-        margin-left: 15px !important; 
+        margin-left: 25px !important; 
         }
 }

@@ -1,0 +1,27 @@
+.navhm{
+    width: 580px;
+    height: 100px;
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-right: 80px;
+}
+.linav li{
+ display: inline-block;
+width: 150px;
+ border: 1px solid black;
+ text-align: center;
+ border-radius: 20px;
+}
+
+.linav{
+    padding-left: 70px;
+}
+.btn{
+    border: none;
+}
+
+.rounded-circle{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}

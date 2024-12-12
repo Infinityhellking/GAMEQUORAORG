@@ -37,8 +37,7 @@ throw new Error('Method not implemented.');
 
     this.regpage=new FormGroup({
       fullname:new FormControl('',Validators.required),
-      regemail:new FormControl('',Validators.required),
-      mobilenumber:new FormControl('',Validators.required),
+      usermail:new FormControl('',Validators.required),
       password:new FormControl('',Validators.required),
       confirmpassword:new FormControl('',Validators.required)
 
@@ -46,12 +45,11 @@ throw new Error('Method not implemented.');
     })
 
 
-    this.forgotpage=new FormGroup({
-      mobile:new FormControl('',Validators.required),
-      otp:new FormControl('',Validators.required),
-      newpassword:new FormControl('',Validators.required),
-      confirmpassword:new FormControl('',Validators.required)
-    });
+    // this.forgotpage=new FormGroup({
+    //   mobile:new FormControl('',Validators.required),
+    //   newpassword:new FormControl('',Validators.required),
+    //   confirmpassword:new FormControl('',Validators.required)
+    // });
 
   }
 
